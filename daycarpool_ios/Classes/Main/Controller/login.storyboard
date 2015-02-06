@@ -17,47 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oio-Pf-bJa">
-                                <rect key="frame" x="120" y="95" width="80" height="80"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oio-Pf-bJa">
+                                <rect key="frame" x="110" y="75" width="100" height="100"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天天拼车" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2k-vI-HV2">
-                                <rect key="frame" x="66" y="183" width="189" height="26"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="使用QQ帐号或者新浪微博登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHJ-es-qGz">
-                                <rect key="frame" x="45" y="405" width="230" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="使用QQ帐号或者新浪微博登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHJ-es-qGz">
+                                <rect key="frame" x="45" y="418" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjl-os-XRy">
-                                <rect key="frame" x="16" y="447" width="288" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="QQ帐号">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjl-os-XRy">
+                                <rect key="frame" x="16" y="447" width="288" height="37"/>
+                                <state key="normal" image="qq.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="QQLoginAction:" destination="UlD-EJ-yZA" eventType="touchUpInside" id="OhA-Z3-bUg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4A-t6-aVh">
-                                <rect key="frame" x="16" y="504" width="288" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="新浪微博">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4A-t6-aVh">
+                                <rect key="frame" x="16" y="492" width="288" height="37"/>
+                                <state key="normal" image="sina.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="WBLoginAction:" destination="UlD-EJ-yZA" eventType="touchUpInside" id="taM-C6-PFU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="name.png" translatesAutoresizingMaskIntoConstraints="NO" id="6wg-ZP-W2V">
+                                <rect key="frame" x="80" y="183" width="160" height="41"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="ImageViewHeader" destination="Oio-Pf-bJa" id="kIO-f2-01n"/>
+                        <outlet property="ImageViewTitle" destination="6wg-ZP-W2V" id="feg-VK-TOJ"/>
                         <outlet property="QQLoginButton" destination="Fjl-os-XRy" id="piY-PR-8eS"/>
                         <outlet property="WBLoginButton" destination="m4A-t6-aVh" id="sNd-ul-LRU"/>
                     </connections>
@@ -68,6 +65,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="test_header.png" width="173" height="173"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="name.png" width="124" height="31"/>
+        <image name="qq.png" width="207" height="37"/>
+        <image name="sina.png" width="207" height="37"/>
     </resources>
 </document>

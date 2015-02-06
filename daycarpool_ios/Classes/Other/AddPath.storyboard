@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Add Path View Controller-->
+        <scene sceneID="u8S-IQ-FWo">
+            <objects>
+                <viewController storyboardIdentifier="AddPathViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KnB-mr-Got" customClass="AddPathViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nC0-pJ-tB9"/>
+                        <viewControllerLayoutGuide type="bottom" id="niW-yA-QWb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lYh-eG-s7c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIe-rT-onL">
+                                <rect key="frame" x="0.0" y="-6" width="320" height="574"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="终点地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xv-Kk-uBR">
+                                        <rect key="frame" x="177" y="79" width="128" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="到" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgo-eR-hFF">
+                                        <rect key="frame" x="152" y="83" width="17" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="起点地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N72-KI-Evf">
+                                        <rect key="frame" x="17" y="79" width="127" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwk-Jj-c49">
+                                        <rect key="frame" x="16" y="132" width="288" height="37"/>
+                                        <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="添加">
+                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonAddAction:" destination="KnB-mr-Got" eventType="touchUpInside" id="Xfk-Nd-JuP"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="举例:如果您想从香河到北京,请在起始地点填写香河,终点地址填写北京" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eiw-8N-wsy">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="buttonAdd" destination="Bwk-Jj-c49" id="df7-eS-6Ea"/>
+                        <outlet property="endLocation" destination="3Xv-Kk-uBR" id="UgG-2f-ZbX"/>
+                        <outlet property="rootScrollView" destination="PIe-rT-onL" id="PaE-Dr-Fdm"/>
+                        <outlet property="startLocation" destination="N72-KI-Evf" id="566-Xa-Zlc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fko-wW-3xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="255"/>
+        </scene>
+    </scenes>
+</document>

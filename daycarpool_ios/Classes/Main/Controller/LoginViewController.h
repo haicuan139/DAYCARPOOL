@@ -1,6 +1,6 @@
 //
 //  LoginViewController.h
-//  新浪微博
+
 //
 //  Created by haicuan139 on 15-1-23.
 //  Copyright (c) 2015年 itcast. All rights reserved.
@@ -14,4 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *WBLoginButton;
 - (IBAction)WBLoginAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewHeader;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewTitle;
+
 @end

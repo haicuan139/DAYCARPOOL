@@ -1,6 +1,6 @@
 //
 //  MainController.h
-//  新浪微博
+
 //
 //  Created by apple on 13-10-26.
 //  Copyright (c) 2013年 itcast. All rights reserved.
@@ -11,6 +11,5 @@
 
 
 @interface MainController : DockController
-- (void)NSNotificationExecute:(NSNotification *)notification;
 -(void)buttonFBPCAction:(UIButton *)sender;
 @end

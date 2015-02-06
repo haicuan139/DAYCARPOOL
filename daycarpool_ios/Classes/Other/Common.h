@@ -10,4 +10,5 @@
 // 发布状态
 #define MyLog(...)
 #define STATIC_NOTIFICATION_TYPE_HIDDEN_BOTTOMBAR @"hidden_bottombar"
+
 #endif

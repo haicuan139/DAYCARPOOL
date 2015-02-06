@@ -1,6 +1,6 @@
 //
 //  MainController.m
-//  新浪微博
+
 //
 //  Created by apple on 13-10-26.
 //  Copyright (c) 2013年 itcast. All rights reserved.
@@ -9,10 +9,7 @@
 #import "MainController.h"
 #import "Dock.h"
 #import "HomeController.h"
-#import "MoreController.h"
 #import "MeController.h"
-#import "MessageController.h"
-#import "SquareController.h"
 #import "WBNavigationController.h"
 
 #define kDockHeight 44

@@ -1,6 +1,6 @@
 //
 //  HomeController.m
-//  新浪微博
+
 //
 //  Created by apple on 13-10-27.
 //  Copyright (c) 2013年 itcast. All rights reserved.
@@ -17,15 +17,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //如果未登录
-
-    
+    //开启定位
+    self.mapView = [[MAMapView alloc]initWithFrame:self.view.bounds];
+    self.mapView.delegate = self;
+    _mapView.showsUserLocation = YES;
+    _mapView.userTrackingMode = 1;
+//    [self.view addSubview:self.mapView];
+    self.title = @"首页";
     // 1.设置标题
     UIView *customTitleView = [[UIView alloc]init];
     NSInteger customTitleViewW = self.view.frame.size.width/2;
     NSInteger customTitleViewH = 40;
     customTitleView.frame = CGRectMake(0, 0, customTitleViewW, customTitleViewH);
-//    customTitleView.backgroundColor = [UIColor redColor];
     UIButton *titleButton = [[UIButton alloc]init];
     [titleButton setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
     [titleButton setTitle:@"北京 ⇄ 香河" forState:UIControlStateNormal];
@@ -33,11 +36,18 @@
     [titleButton.titleLabel setFont:font];
     titleButton.frame = CGRectMake(customTitleViewW/2 - 120/2, customTitleViewH / 2 - 20, 120, customTitleViewH);
     [titleButton addTarget:self action:@selector(buttonTitleAction:) forControlEvents:UIControlEventTouchUpInside];
+    //向下的箭头
+    UIButton *downArrowButton = [[UIButton alloc]init];
+    [downArrowButton setImage:[UIImage imageNamed:@"arrowdown.png"] forState:UIControlStateNormal];
+    downArrowButton.frame =CGRectMake(customTitleView.frame.size.width - 23, customTitleViewH / 2 - 12/2 , 12, 12);
+    
     [customTitleView addSubview:titleButton];
+    [customTitleView addSubview:downArrowButton];
     self.navigationItem.titleView = customTitleView;
     //右面的按钮
     UIButton *rightButton = [[UIButton alloc]init];
-    rightButton.frame = CGRectMake(0, 0, 25, 25);
+    [rightButton addTarget:self action:@selector(filtrateButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    rightButton.frame = CGRectMake(0, 0, 21, 21);
     [rightButton setBackgroundImage:[UIImage imageNamed:@"shaixuan.png"] forState:UIControlStateNormal];
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
@@ -56,8 +66,17 @@
     self.tableView.footerReleaseToRefreshText = @"松开刷新";
     self.tableView.footerRefreshingText = @"正在刷新..";
 }
+-(void)filtrateButtonAction:(UIButton *)sender{
+    //跳转筛选界面
+    UIStoryboard* st = [UIStoryboard storyboardWithName:@"shaixuan" bundle:nil];
+    UIViewController *controller = [st instantiateViewControllerWithIdentifier:@"FiltrateViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 -(void)buttonTitleAction:(UIButton *)sender{
     MyLog(@"点击了标题");
+    UIStoryboard* st = [UIStoryboard storyboardWithName:@"PinDao" bundle:nil];
+    UIViewController *controller = [st instantiateViewControllerWithIdentifier:@"PinDaoTableViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 -(void)footerRereshing{
     double delayInSeconds = 3.0f;
@@ -91,14 +110,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *homeTableCellId = @"HomeTalCell";
+    UIColor* color=[UIColor colorWithHexString:@"#E3E3E3"];
     HomeTabCell *cell = (HomeTabCell *)[self.tableView dequeueReusableCellWithIdentifier:homeTableCellId];
     if(cell == nil){
         NSArray *marray = [[NSBundle mainBundle] loadNibNamed:@"HomeTabCell" owner:self options:nil];
         cell = [marray objectAtIndex:0];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    cell.selectedBackgroundView = [[UIView alloc]initWithFrame:cell.frame];
+    cell.selectedBackgroundView.backgroundColor=color;
     return cell;
 }
-
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"点击了");
+    // 取消选中状态
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+#pragma -mark 地图定位回调,刷新当前经纬度
+-(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation
+updatingLocation:(BOOL)updatingLocation
+{
+    if(updatingLocation)
+    {
+        //取出当前位置的坐标
+        NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+        self.mapView.showsUserLocation = NO;
+    }
+}
 @end

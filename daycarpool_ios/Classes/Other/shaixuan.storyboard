@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Filtrate View Controller-->
+        <scene sceneID="CSf-0Q-cVM">
+            <objects>
+                <viewController storyboardIdentifier="FiltrateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jzd-eb-CkT" customClass="FiltrateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tit-32-P3k"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dz5-l7-TPG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l97-qW-Itq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaZ-pE-qrb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-at-hDv">
+                                        <rect key="frame" x="8" y="41" width="304" height="29"/>
+                                        <segments>
+                                            <segment title="全部"/>
+                                            <segment title="去北京"/>
+                                            <segment title="去香河"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sgementedAddressAction:" destination="jzd-eb-CkT" eventType="valueChanged" id="xSs-DX-8n5"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您想看到的拼车信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-Fn-WXs">
+                                        <rect key="frame" x="8" y="21" width="133" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-Hq-yan">
+                                        <rect key="frame" x="8" y="110" width="304" height="29"/>
+                                        <segments>
+                                            <segment title="全部"/>
+                                            <segment title="1KM以内"/>
+                                            <segment title="2KM以内"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sgementedDisAction:" destination="jzd-eb-CkT" eventType="valueChanged" id="NRy-la-jnR"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="出发地点离您的距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsF-mq-xJU">
+                                        <rect key="frame" x="8" y="90" width="133" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="0f9-wS-xG3">
+                                        <rect key="frame" x="8" y="175" width="304" height="29"/>
+                                        <segments>
+                                            <segment title="全部"/>
+                                            <segment title="今天"/>
+                                            <segment title="明天"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sgementedTimeAction:" destination="jzd-eb-CkT" eventType="valueChanged" id="k06-rp-1uD"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="出发时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Es-1e-jyS">
+                                        <rect key="frame" x="8" y="157" width="133" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h46-7v-I3D">
+                                        <rect key="frame" x="8" y="233" width="304" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="确认">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonCommitAction:" destination="jzd-eb-CkT" eventType="touchUpInside" id="Djg-Mi-nZv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="buttonCommit" destination="h46-7v-I3D" id="eXw-Vw-mUF"/>
+                        <outlet property="segmentedControlAddress" destination="jD0-at-hDv" id="crz-t4-4Wp"/>
+                        <outlet property="segmentedControlDis" destination="eFb-Hq-yan" id="4e6-14-qwf"/>
+                        <outlet property="segmentedControlTime" destination="0f9-wS-xG3" id="Vba-PX-RQB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Dm-TL-J1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="161"/>
+        </scene>
+    </scenes>
+</document>
